@@ -1,0 +1,75 @@
+databaseChangeLog:
+  - changeSet:
+      id: data-authors
+      author: s_filinovich
+      context: test
+      runOnChange: true
+      loadUpdateData:
+        primaryKey: id
+        file: testData/2023-05-22--0001-authors.csv
+        relativeToChangelogFile: true
+        separator: ;
+        quotChar: '"'
+        seperator: ';'
+        encoding: UTF-8
+        tableName: authors
+
+  - changeSet:
+      id: data-genres
+      author: s_filinovich
+      context: test
+      runOnChange: true
+      loadUpdateData:
+        primaryKey: id
+        file: testData/2023-05-22--0002-genres.csv
+        relativeToChangelogFile: true
+        separator: ;
+        quotChar: '"'
+        seperator: ';'
+        encoding: UTF-8
+        tableName: genres
+
+  - changeSet:
+      id: data-books
+      author: s_filinovich
+      context: test
+      runOnChange: true
+      loadUpdateData:
+        primaryKey: id
+        file: testData/2023-05-22--0003-books.csv
+        relativeToChangelogFile: true
+        separator: ;
+        quotChar: '"'
+        seperator: ';'
+        encoding: UTF-8
+        tableName: books
+
+  - changeSet:
+      id: data-books-authors
+      author: s_filinovich
+      context: test
+      runOnChange: true
+      loadUpdateData:
+        primaryKey: id
+        file: testData/2023-05-31--0004-books-authors.csv
+        relativeToChangelogFile: true
+        separator: ;
+        quotChar: '"'
+        seperator: ';'
+        encoding: UTF-8
+        tableName: books_authors
+
+  - changeSet:
+      id: data-book-comments
+      author: s_filinovich
+      context: test
+      runOnChange: true
+      loadUpdateData:
+        primaryKey: id
+        file: testData/2023-05-31--0005-book-comments.csv
+        relativeToChangelogFile: true
+        separator: ;
+        quotChar: '"'
+        seperator: ';'
+        encoding: UTF-8
+        tableName: book_comments

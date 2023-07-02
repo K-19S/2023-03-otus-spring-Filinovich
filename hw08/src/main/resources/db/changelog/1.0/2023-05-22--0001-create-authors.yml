@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-authors
+      author: s_filinovich
+      changes:
+        - createTable:
+            tableName: authors
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_authors
+              - column:
+                  name: name
+                  type: varchar(255)

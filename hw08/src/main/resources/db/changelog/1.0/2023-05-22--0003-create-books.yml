@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-books
+      author: s_filinovich
+      changes:
+        - createTable:
+            tableName: books
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: genre_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_book_genre
+                    references: genres(id)
+                    deleteCascade: false

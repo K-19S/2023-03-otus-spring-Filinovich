@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-books-authors
+      author: s_filinovich
+      changes:
+        - createTable:
+            tableName: books_authors
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: author_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_books_author
+                    references: authors(id)
+                    deleteCascade: true
+              - column:
+                  name: book_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_book_authors
+                    references: books(id)
+                    deleteCascade: true
